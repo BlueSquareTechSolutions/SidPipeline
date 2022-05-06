@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: dashboard
-        image: bstsreg.azurecr.io/dashboard:latest
+        image: bstsregistry.azurecr.io/dashboard:latest
         ports:
           - containerPort: 9000
       restartPolicy: Always
