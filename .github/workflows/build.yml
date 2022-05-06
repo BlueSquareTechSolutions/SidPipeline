@@ -20,8 +20,8 @@ jobs:
         run: |
             docker compose build 
             docker images
-            docker tag SidPipeline_dashboard ${{ secrets.ACR }}/dashboard
-            docker tag SidPipeline_api ${{ secrets.ACR }}/api
+            docker tag sidpipeline_dashboard ${{ secrets.ACR }}/dashboard
+            docker tag sidpipeline_api ${{ secrets.ACR }}/api
             docker push ${{ secrets.ACR }}/dashboard
             docker push ${{ secrets.ACR }}/api
 
