@@ -18,13 +18,10 @@ jobs:
       - run: |
             az account set --subscription 61676ee4-e0d9-4eb1-91d3-2bef03163b17
             az aks get-credentials --resource-group bsts --name bsts-aks
-            az aks python3 manage.py migrate
-            az aks python3 manage.py collectstatic --noinput
-            az aks python3 manage.py populatedb
             
-      - task: ShellScript@2
-        inputs:
-          scriptPath:
+      - name: Display the path
+        run: echo "hello"
+        shell: bash
                     
             
             
