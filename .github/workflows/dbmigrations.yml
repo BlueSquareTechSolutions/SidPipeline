@@ -23,6 +23,7 @@ jobs:
       - name: Run script file
         run: |
          chmod +x ./test.sh
+         ./test.sh
         shell: bash
       
 
