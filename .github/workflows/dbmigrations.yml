@@ -22,8 +22,9 @@ jobs:
             az aks python3 manage.py collectstatic --noinput
             az aks python3 manage.py populatedb
             
-
-
-            
+      - task: ShellScript@2
+        inputs:
+          scriptPath:
+                    
             
             
