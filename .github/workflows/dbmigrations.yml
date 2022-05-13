@@ -20,8 +20,9 @@ jobs:
             az aks get-credentials --resource-group bsts --name bsts-aks
             
       - name: Display the path
-        run: echo "hello"
-        shell: bash
+        run: | 
+            echo "hello"
+            echo "world"
                     
             
             
