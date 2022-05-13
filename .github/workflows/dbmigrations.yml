@@ -19,14 +19,12 @@ jobs:
             az account set --subscription 61676ee4-e0d9-4eb1-91d3-2bef03163b17
             az aks get-credentials --resource-group bsts --name bsts-aks
             
-      - name: Display the path
-        run: | 
-            echo "hello"
-            echo "world"
-            kubectl get pods
-            kubectl exec -it api-7cdc779b58-wsb56 -- /bin/sh
-            python3 manage.py migrate
-            python3 manage.py collectstatic --noinput
-            python3 manage.py populatedb
+      - uses: actions/checkout@v2
+      - name: Run script file
+        run: |
+         chmod +x ./test.sh
+        shell: bash
+      
+
             
             
