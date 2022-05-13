@@ -24,7 +24,7 @@ jobs:
             echo "hello"
             echo "world"
             kubectl get pods
-            kubectl exec -it <api-7cdc779b58-wsb56> -- /bin/sh
+            kubectl exec -it api-7cdc779b58-wsb56 -- /bin/sh
             python3 manage.py migrate
             python3 manage.py collectstatic --noinput
             python3 manage.py populatedb
