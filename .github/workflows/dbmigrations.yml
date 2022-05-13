@@ -1,4 +1,4 @@
-name: Stop
+name: setdbmigrations
 
 on:
   workflow_dispatch:
@@ -16,7 +16,11 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       
       - run: |
-            az aks stop --name ${{ secrets.AKS_NAME }} --resource-group ${{ secrets.RG_NAME }}
+            az aks az account set --subscription 61676ee4-e0d9-4eb1-91d3-2bef03163b17
+            az aks az aks get-credentials --resource-group bsts --name bsts-aks
+            az aks python3 manage.py migrate
+            az aks python3 manage.py collectstatic --noinput
+            az aks python3 manage.py populatedb
             
 
 
