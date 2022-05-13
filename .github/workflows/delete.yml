@@ -16,4 +16,4 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       
       - run: |
-            az aks delete --name bsts-aks --resource-group bsts-aks  --no-wait --yes
+            az aks delete --name bsts-aks --resource-group bsts  --no-wait --yes
